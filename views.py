@@ -1,25 +1,8 @@
 import tkinter as tk
 from tkinter import *
+from HomeView import HomeView
+from EquipmentView import EquipmentView
 
-
-class HomeView(tk.Frame):
-    def __init__(self, parent, *args, **kwargs):
-        super().__init__(parent, *args, **kwargs)
-        self.label = tk.Label(self, text="Home View")
-        self.label.pack(fill="both", expand=True)
-
-    def __str__(self):
-        return ".!frame2.!homeview" if self.master.winfo_toplevel() == self.master else ""
-
-
-class EquipmentView(tk.Frame):
-    def __init__(self, parent, *args, **kwargs):
-        super().__init__(parent, *args, **kwargs)
-        self.label = tk.Label(self, text="Equipment View")
-        self.label.pack(fill="both", expand=True)
-
-    def __str__(self):
-        return ".!frame2.!equipment" if self.master.winfo_toplevel() == self.master else ""
 
 class MyWindow(tk.Tk):
     def __init__(self, controller=None):
