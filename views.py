@@ -8,11 +8,12 @@ class MyWindow(tk.Tk):
     def __init__(self, controller=None):
         super().__init__()
         self.controller = controller
+        self.session = self.controller.get_session()
         self.right_frame = None
         self.create_user_gui()
 
         self.home_view = HomeView(self.right_frame)
-        self.equipment_view = EquipmentView(self.right_frame)
+        self.equipment_view = EquipmentView(self.right_frame, self.equipment_owners)
 
     def create_user_gui(self):
 

@@ -7,12 +7,11 @@ def main():
     root = tk.Tk()
     root.withdraw()
 
-    window = MyWindow()
-    controller = Menu_Controller(window)
-
-    window.set_controller(controller)
-
+    controller = Menu_Controller(None)
+    window = MyWindow(controller=controller)
+    controller.set_view(view=window)
     root.mainloop()
+
 
 if __name__ == "__main__":
     main()
